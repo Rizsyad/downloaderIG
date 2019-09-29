@@ -89,8 +89,6 @@ echo "$bold $yellow [!] Sedang mendownload media... \n".$cln;
 sleep(4);
 
 foreach ($array_media as $key => $value) {
-    if(!$preg_match = preg_match_all('/(.*)\.(.*)\?/si', $medias[$value-1], $matches)) { echo "$bold $red [-] Gagal untuk mendownload media... \n".$cln; exit(); }
-    system("curl -s -o "."media-".uniqid().".".$matches[2][0]. " " .$medias[$value-1]);
+    if(!$preg_match = preg_match_all('/(.*)\.(.*)\?/si', $medias[$value-1], $matches)) { echo "$bold $red [-] Gagal untuk mendownload media... \n\n".$cln; }
+    else { system("curl -s -o "."media-".uniqid().".".$matches[2][0]. " " .$medias[$value-1]); echo "$bold $green [+] Download telah selesai ".$medias[$value-1]."\n\n".$cln; }
 }
-
-echo "$bold $green [+] Download telah selesai \n\n".$cln;
