@@ -44,9 +44,7 @@ function get_image($url_toget)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $result = curl_exec($ch);
-
     curl_close($ch);
-
     return $result;
 }
 
